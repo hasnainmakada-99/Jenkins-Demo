@@ -1,9 +1,11 @@
-pipeline {
-    agent any 
-    stages {
-        stage('Stage 1') {
-            steps {
-                echo 'Hello world!' 
+pipeline{
+    agent{
+        docker {image: 'node:latest'};
+    }
+    stages{
+        stage('Test'){
+            steps{
+                sh 'node --version'
             }
         }
     }
