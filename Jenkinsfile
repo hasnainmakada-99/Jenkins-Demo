@@ -1,10 +1,10 @@
-pipeline{
-    agent{
-        docker {image 'node:latest'};
+pipeline {
+    agent {
+        docker { image 'node:16.13.1-alpine' }
     }
-    stages{
-        stage('Test'){
-            steps{
+    stages {
+        stage('Test') {
+            steps {
                 sh 'node --version'
             }
         }
